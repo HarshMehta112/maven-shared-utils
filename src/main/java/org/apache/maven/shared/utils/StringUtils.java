@@ -542,7 +542,11 @@ public class StringUtils {
      */
     @Nonnull
     public static String concatenate(@Nonnull Object... array) {
-        return join(array, "");
+        StringBuilder buffer = new StringBuilder();
+        for (Object obj : array) {
+            buffer.append(obj);
+        }
+        return buffer.toString();
     }
 
     /**
